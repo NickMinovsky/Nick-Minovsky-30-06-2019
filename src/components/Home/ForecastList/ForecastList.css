@@ -1,0 +1,18 @@
+.forecast-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: auto;
+}
+
+.beach {
+  width: 90px;
+  position: absolute;
+  bottom: -610px;
+  right: 0;
+}
+/*# sourceMappingURL=ForecastList.css.map */

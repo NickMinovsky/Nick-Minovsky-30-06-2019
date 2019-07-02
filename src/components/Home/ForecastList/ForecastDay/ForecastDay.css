@@ -1,0 +1,31 @@
+.main2 {
+  color: #eaee1a;
+  font-family: "Muli", sans-serif;
+  width: 15%;
+}
+
+.main2-desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+
+.main2-desc__name {
+  margin-bottom: 0;
+}
+
+.main2-desc__text {
+  margin-bottom: 0;
+}
+/*# sourceMappingURL=ForecastDay.css.map */

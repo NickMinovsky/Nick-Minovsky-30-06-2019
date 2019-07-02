@@ -1,0 +1,18 @@
+.loader {
+  display: flex;
+  flex-direction: column;
+
+  &-img {
+    animation: spin 2s infinite;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
