@@ -19,6 +19,12 @@ class Favorites extends Component {
     }
   };
 
+  favList = () => {
+    this.state.current.forEach(item => {
+      return <p>{this.state.current.location.name}</p>;
+    });
+  };
+
   render() {
     if (this.state.current.location === undefined) {
       return <Loading />;
@@ -31,6 +37,8 @@ class Favorites extends Component {
             <Card style={{ width: "18rem" }}>
               <Card.Body>
                 <Card.Text>{this.state.current.location.name}</Card.Text>
+                <Card.Text>{this.favList}</Card.Text>
+
                 <Button variant="primary">Remove from favorites</Button>
               </Card.Body>
             </Card>

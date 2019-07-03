@@ -19,7 +19,7 @@
 }
 
 .btn-outline-primary {
-  color: #000000;
+  color: #fd6f71;
   border-color: #fd6f71;
   border-radius: 80px;
   background-color: #fadc60;
@@ -28,9 +28,13 @@
 }
 
 .btn-outline-primary:hover {
-  background-color: #fadc60;
-  border-color: #fd6f71;
-  color: #fd6f71;
+  background-color: #fd6f71;
+  border-color: #fadc60;
+  color: #fadc60;
+}
+
+.btn-outline-primary:active {
+  color: red;
 }
 
 .sun_icon {
