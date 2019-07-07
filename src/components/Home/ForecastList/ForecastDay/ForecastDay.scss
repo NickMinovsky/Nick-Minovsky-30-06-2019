@@ -1,5 +1,5 @@
 .main2 {
-  color: rgb(234, 238, 26);
+  color: #fadc60;
   font-family: "Muli", sans-serif;
   width: 15%;
 
@@ -8,9 +8,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    width: 250px;
+    margin-right: 2rem;
+
+    @media screen and (max-width: 599px) {
+      height: 30vh;
+    }
 
     &__name {
+      font-size: 1.2rem;
       margin-bottom: 0;
     }
 
@@ -18,4 +24,8 @@
       margin-bottom: 0;
     }
   }
+}
+
+.day {
+  text-decoration: underline;
 }

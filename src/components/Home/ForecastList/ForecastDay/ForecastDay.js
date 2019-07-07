@@ -8,7 +8,7 @@ const Forecast = ({ day }) => {
     <div className="main2">
       <div className="main2-desc">
         <p className="main2-desc__name">
-          on <strong>{moment(day.date).format("dddd")}</strong>
+          on <strong className="day">{moment(day.date).format("dddd")}</strong>
         </p>
         <p className="main2-desc__text">It's {day.day.condition.text}</p>
         <img className="main2__icon" src={day.day.condition.icon} alt="icon" />

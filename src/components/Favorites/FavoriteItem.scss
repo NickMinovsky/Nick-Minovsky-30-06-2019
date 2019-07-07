@@ -1,0 +1,14 @@
+.favItem {
+  border-radius: 38px 38px 38px 38px;
+  margin: 1rem;
+  text-overflow: clip;
+  display: grid;
+  grid-column: span 3;
+  justify-self: center;
+  justify-content: center;
+  text-align: center;
+  width: 150px;
+  background-color: #fadc60;
+  color: #fd6f71;
+  border: 5px double #fd6f71;
+}

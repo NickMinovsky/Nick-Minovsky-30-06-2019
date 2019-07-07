@@ -3,9 +3,16 @@ body {
 }
 
 #background-wrap {
-  top: 180px;
+  top: 100px;
   position: absolute;
   width: 100%;
+}
+
+@media screen and (max-width: 599px) {
+  #background-wrap {
+    position: fixed;
+    top: 50px;
+  }
 }
 
 /* KEYFRAMES */
@@ -33,7 +40,6 @@ body {
   animation: animateCloud 35s linear infinite;
   -webkit-transform: scale(0.65);
   transform: scale(0.65);
-  z-index: 1999;
 }
 
 .x2 {
@@ -41,7 +47,6 @@ body {
   animation: animateCloud 20s linear infinite;
   -webkit-transform: scale(0.3);
   transform: scale(0.3);
-  z-index: -999;
 }
 
 .x3 {

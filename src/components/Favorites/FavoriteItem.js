@@ -1,21 +1,15 @@
 import React from "react";
 
 import { Card, Button } from "react-bootstrap";
+import "./FavoriteItem.css";
 
-const FavoriteItem = () => {
+const FavoriteItem = props => {
   return (
-    <div className="layout">
-      <div id="home" className="top-div2">
-        <div className="fav-container">
-          <Card style={{ width: "18rem" }}>
-            <Card.Body>
-              <Card.Text>{this.props.city}</Card.Text>
-              <Button variant="primary">Remove from favorites</Button>
-            </Card.Body>
-          </Card>
-        </div>
-      </div>
-    </div>
+    <Card className="favItem">
+      <Card.Body>
+        <Card.Text>{props.city}</Card.Text>
+      </Card.Body>
+    </Card>
   );
 };
 

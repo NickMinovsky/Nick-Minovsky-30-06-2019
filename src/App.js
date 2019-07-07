@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home/Home";
-import Favorites from "./components/Favorites/Favorites";
+import Favorites from "./components/Favorites/FavoriteList";
 import Error from "./components/Layout/Error/Error";
 
 import "./App.css";

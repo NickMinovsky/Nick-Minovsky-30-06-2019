@@ -1,9 +1,11 @@
 import React from "react";
+
 import Loading from "../../Layout/Loading/Loading";
+import { Button } from "react-bootstrap";
 
 import "./Today.css";
 
-const WeatherBlock = ({ current }) => {
+const Today = ({ current, addFav }) => {
   while (!current) {
     return (
       <div className="main">
@@ -15,16 +17,24 @@ const WeatherBlock = ({ current }) => {
   }
 
   return (
-    <div className="main">
-      <div className="main-desc">
-        <p className="main-desc__name">{current.location.name}</p>
-        <p>
-          <strong>Today</strong> it's {current.current.temp_c} <sup>o</sup>C
-        </p>
-        <p className="main-desc__text">and {current.current.condition.text}</p>
+    <div>
+      <div className="main">
+        <div className="main-desc">
+          <p className="main-desc__name">{current.location.name}</p>
+          <p>
+            <strong>Today</strong> it's {current.current.temp_c}
+            <sup>o</sup>C
+          </p>
+          <p className="main-desc__text">
+            and {current.current.condition.text}
+          </p>
+          <Button onClick={addFav} variant="outline-primary" className="fav">
+            Add <i className="fa fa-heart-o" aria-hidden="true" />
+          </Button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default WeatherBlock;
+export default Today;

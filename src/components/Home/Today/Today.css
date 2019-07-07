@@ -41,6 +41,17 @@
   letter-spacing: 0.2rem;
   -webkit-animation: sun 2s infinite forwards;
           animation: sun 2s infinite forwards;
+  z-index: 1;
+}
+
+@media screen and (max-width: 599px) {
+  .main-desc {
+    margin-top: 3rem;
+  }
+}
+
+.main-desc__text {
+  margin-bottom: 2rem;
 }
 
 @-webkit-keyframes sun {

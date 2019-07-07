@@ -1,11 +1,10 @@
 .navbar {
   border-radius: 80px !important;
-  top: 10px;
+  top: 5px;
   width: 90%;
   left: 4.5%;
   background-color: transparent !important;
   position: fixed;
-  z-index: 999;
 }
 
 .link {

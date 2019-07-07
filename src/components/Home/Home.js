@@ -2,12 +2,17 @@ import React, { Component } from "react";
 
 import weather from "../../API/weather";
 import SearchBar from "../Layout/SearchBar/SearchBar";
-import Today from "../Home/Today/Today";
+import Today from "./Today/Today";
 import ForecastList from "./ForecastList/ForecastList";
 import Condition from "../Layout/Condition/Condition";
 
+import "./Home.css";
 class Home extends Component {
-  state = { current: "", forecast: "", favorites: "" };
+  state = { current: "", forecast: "" };
+
+  componentDidMount() {
+    this.onSearchSubmit("tel aviv");
+  }
 
   onSearchSubmit = async term => {
     const response = await weather.get("/forecast.json", {
@@ -19,23 +24,26 @@ class Home extends Component {
       current: response.data,
       forecast: response.data.forecast
     });
-
-    localStorage.setItem("data", JSON.stringify(this.state.current));
+    // localStorage.setItem("data", JSON.stringify(this.state.current));
   };
 
-  componentDidMount() {
-    this.onSearchSubmit("tel aviv");
+  addFav() {
+    let oldItems = JSON.parse(localStorage.getItem("itemsArray")) || [];
+    let newItem = this.state.current.location.name;
+    oldItems.push(newItem);
+    localStorage.setItem("itemsArray", JSON.stringify(oldItems));
   }
 
   render() {
     return (
       <div className="layout">
-        <div id="home" className="top-div">
+        <div id="top" className="top-div">
           <SearchBar onSearchSubmit={this.onSearchSubmit.bind(this)} />
-          <Today addFavorite={this.addFavorite} current={this.state.current} />
+          <Today addFav={this.addFav.bind(this)} current={this.state.current} />
         </div>
         <div id="forecast" className="bottom-div">
           <Condition />
+          <h3 className="sub-title">Weekley Forecast</h3>
           <ForecastList days={this.state.forecast.forecastday} />
         </div>
       </div>

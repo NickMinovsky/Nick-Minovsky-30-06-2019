@@ -1,20 +1,21 @@
 .navbar {
   border-radius: 80px !important;
-  top: 10px;
+  top: 5px;
   width: 90%;
   left: 4.5%;
   background-color: transparent !important;
   position: fixed;
+  z-index: 999;
 }
 
-.link {
+a.link {
   margin-right: 10px;
   text-decoration: none;
   transition: 300ms;
   color: #fff !important;
 }
-.link:hover {
-  color: rgb(70, 70, 70) !important;
+a.link:hover {
+  color: #fadc60 !important;
 }
 
 .btn-outline-primary {
@@ -47,4 +48,14 @@
 
 .mr-sm-2::grammar-error {
   background-color: green;
+}
+
+@media screen and (max-width: 599px) {
+  input.mr-sm-2.form-control {
+    margin-bottom: 1rem;
+  }
+
+  .form-inline {
+    flex-direction: column;
+  }
 }

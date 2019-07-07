@@ -19,16 +19,13 @@ class SearchBar extends Component {
   render() {
     return (
       <Navbar className="navbar" bg="light" expand="lg">
-        <Navbar.Brand>
+        <Navbar.Brand onClick={this.onFavoritesClick}>
           <img className="sun_icon" src={SUN_ICON} alt="" />
           <span className="brand-name">weatherfy</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Link className="link" to="/">
-              Home
-            </Link>
             <Link className="link" to="/favorites">
               Favorites
             </Link>
