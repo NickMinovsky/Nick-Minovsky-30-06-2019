@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 import SearchBarFav from "../Layout/SearchBarFav/SearchBarFav";
 import FavoriteItem from "./FavoriteItem";
-import Loading from "../Layout/Loading/Loading";
 import { Button } from "react-bootstrap";
 import "./FavoriteList.css";
 

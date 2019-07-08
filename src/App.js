@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home/Home";
 import Favorites from "./components/Favorites/FavoriteList";
+import Footer from "./components/Layout/Footer/Footer";
 import Error from "./components/Layout/Error/Error";
 
 import "./App.css";
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path="/favorites/" component={Favorites} />
           <Route path="/*" component={Error} />
         </Switch>
+        <Footer />
       </Router>
     );
   }

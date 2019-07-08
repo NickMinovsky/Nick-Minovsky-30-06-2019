@@ -45,10 +45,6 @@
   padding-bottom: 0;
 }
 
-.brand-name {
-  font-size: 1.5rem;
-}
-
 .mr-sm-2::grammar-error {
   background-color: green;
 }
