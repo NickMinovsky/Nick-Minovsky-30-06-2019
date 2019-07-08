@@ -8,5 +8,9 @@
 
   @media screen and (max-width: 599px) {
     flex-direction: column;
+    width: unset;
+    align-items: unset;
+    margin: 0;
+    z-index: 1;
   }
 }

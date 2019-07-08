@@ -19,11 +19,7 @@ const ForecastList = ({ days }) => {
     return <ForecastDay day={day} key={index} />;
   });
 
-  return (
-    <div>
-      <div className="forecast-list">{list}</div>
-    </div>
-  );
+  return <div className="forecast-list">{list}</div>;
 };
 
 export default ForecastList;

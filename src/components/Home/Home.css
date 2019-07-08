@@ -1,27 +1,11 @@
-body,
-html {
-  height: 100vh;
-  width: 100%;
-  margin: 0;
-  scroll-behavior: smooth;
-}
-
-.layout {
-  height: 100%;
-  background: deepskyblue;
-  background-image: -webkit-gradient(linear, left bottom, right top, from(#00bfff), color-stop(#1dc3fe), color-stop(#2dc6fd), color-stop(#3acafc), to(#46cdfb));
-  background-image: linear-gradient(to right top, #00bfff, #1dc3fe, #2dc6fd, #3acafc, #46cdfb);
-}
-
 .top-div {
   top: 0;
   height: 50%;
   width: 100%;
 }
 
-.top-div2 {
-  top: 0;
-  height: 50%;
+.favorites {
+  height: 100%;
   width: 100%;
 }
 
@@ -45,11 +29,40 @@ html {
 }
 
 .sub-title {
-  color: #606afa;
+  font-family: "Lobster", cursive;
+  color: #fadc60;
   font-weight: lighter;
-  margin-bottom: 4rem;
   letter-spacing: 0.4rem;
   font-weight: 400;
+  margin-top: 4rem;
+  text-shadow: 0px 3px 0px #fd6f71;
+  text-align: center;
+}
+
+@media screen and (max-width: 599px) {
+  .sub-title {
+    font-size: 1.2rem;
+    position: absolute;
+    top: 49px;
+  }
+}
+
+.sub-title2 {
+  font-family: "Lobster", cursive;
+  color: #fadc60;
+  font-weight: lighter;
+  letter-spacing: 0.4rem;
+  font-weight: 400;
+  margin-top: 4rem;
+  text-shadow: 0px 3px 0px #fd6f71;
+  text-align: center;
+}
+
+@media screen and (max-width: 599px) {
+  .sub-title2 {
+    font-size: 1.2rem;
+    top: 49px;
+  }
 }
 
 @-webkit-keyframes pulse {

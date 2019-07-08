@@ -30,7 +30,12 @@ a.link:hover {
 .btn-outline-primary:hover {
   background-color: #fadc60;
   border-color: #fd6f71;
-  color: #fd6f71;
+}
+
+.btn-outline-primary:active {
+  background-color: #fadc60 !important;
+  border-color: #fd6f71 !important;
+  color: #fd6f71 !important;
 }
 
 .sun_icon {
@@ -44,6 +49,12 @@ a.link:hover {
 
 .brand-name {
   font-size: 1.5rem;
+  font-family: "Lobster", cursive;
+  color: #fadc60;
+  font-weight: lighter;
+  font-weight: 400;
+  margin-top: 4rem;
+  text-shadow: 0px 3px 0px #fd6f71;
 }
 
 .mr-sm-2::grammar-error {
@@ -52,10 +63,13 @@ a.link:hover {
 
 @media screen and (max-width: 599px) {
   input.mr-sm-2.form-control {
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
   }
 
-  .form-inline {
-    flex-direction: column;
+  .navbar-collapse {
+    width: 50%;
+    flex-basis: unset;
+    flex-grow: unset;
   }
 }

@@ -26,6 +26,9 @@ class SearchBar extends Component {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
+            <Link className="link" to="/">
+              Home
+            </Link>
             <Link className="link" to="/favorites">
               Favorites
             </Link>

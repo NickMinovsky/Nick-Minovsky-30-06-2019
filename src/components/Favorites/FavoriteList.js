@@ -7,49 +7,44 @@ import { Button } from "react-bootstrap";
 import "./FavoriteList.css";
 
 class Favorites extends Component {
-  state = { current: {} };
+  state = { current: false };
 
   componentDidMount() {
     this.mountStorage();
   }
 
   mountStorage = async () => {
-    if (localStorage !== undefined) {
+    if (localStorage !== undefined && localStorage !== false) {
       const stateStore = await JSON.parse(localStorage.getItem("itemsArray"));
       let uniqueState = new Set(stateStore);
       this.setState({ current: Array.from(uniqueState) });
     }
   };
 
-  clearFav() {
-    localStorage.removeItem("itemsArray");
-    this.setState({ current: null });
-    window.location.reload();
-  }
+  clearFav = async () => {
+    await localStorage.removeItem("itemsArray");
+    this.setState({ current: false });
+  };
 
   render() {
-    if (this.state.current === undefined) {
-      return <p>You haven't added any favorite cities.</p>;
-    }
     return (
-      <div className="layout">
-        <div className="top-div2">
-          <SearchBarFav />
-          <div className="fav-container">
-            <h3 className="sub-title">
-              {this.state.current !== null ? "Hello" : "yes"}
-            </h3>
-            {Object.values(this.state.current).map((city, index) => {
-              return <FavoriteItem key={index} city={city} />;
-            })}
-            <Button
-              onClick={this.clearFav.bind(this)}
-              variant="outline-warning"
-            >
-              Clear Favorites
-            </Button>
-          </div>
+      <div className="layout2">
+        <SearchBarFav />
+        <h3 className="sub-title">
+          {this.state.current ? "Youre Favorite Cities:" : "Favorites Cleared!"}
+        </h3>
+        <div className="fav-container">
+          {Object.values(this.state.current).map((city, index) => {
+            return <FavoriteItem key={index} city={city} />;
+          })}
         </div>
+        <Button
+          className="remove"
+          onClick={this.clearFav.bind(this)}
+          variant="outline-warning"
+        >
+          Clear Favorites
+        </Button>
       </div>
     );
   }

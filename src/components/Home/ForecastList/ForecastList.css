@@ -19,6 +19,12 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    width: unset;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    margin: 0;
+    z-index: 1;
   }
 }
 /*# sourceMappingURL=ForecastList.css.map */
