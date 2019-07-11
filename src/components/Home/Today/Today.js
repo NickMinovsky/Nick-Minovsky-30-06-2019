@@ -5,7 +5,7 @@ import { Button } from "react-bootstrap";
 
 import "./Today.css";
 
-const Today = ({ current, addFav }) => {
+const Today = ({ current, addFav, status }) => {
   while (!current) {
     return (
       <div className="main">
@@ -29,8 +29,9 @@ const Today = ({ current, addFav }) => {
             and {current.current.condition.text}
           </p>
           <Button onClick={addFav} variant="outline-primary" className="fav">
-            Add <i className="fa fa-heart-o" aria-hidden="true" />
+            Add to favorites
           </Button>
+          <p className="alert2">{status}</p>
         </div>
       </div>
     </div>

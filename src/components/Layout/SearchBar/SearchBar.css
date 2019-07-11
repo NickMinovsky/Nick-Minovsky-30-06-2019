@@ -73,3 +73,35 @@ a.link:hover {
     flex-grow: unset;
   }
 }
+
+.alert {
+  position: absolute;
+  top: 60px;
+  right: 85px;
+  color: red;
+  animation: blink 1s infinite;
+}
+.alert2 {
+  color: #fd6f71;
+  font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: 10px;
+  height: 10px;
+  width: 50%;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}

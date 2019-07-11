@@ -8,7 +8,7 @@ class SearchBarFav extends Component {
   state = { term: "" };
 
   inputHandler = event => {
-    let input = event.target.value;
+    const input = event.target.value;
     this.setState({ term: input });
     this.props.addToFav(this.state.term);
   };

@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 import "./FavoriteList.css";
 
 class Favorites extends Component {
-  state = { current: false };
+  state = { current: "" };
 
   componentDidMount() {
     this.mountStorage();
@@ -15,14 +15,14 @@ class Favorites extends Component {
   mountStorage = async () => {
     if (localStorage !== undefined && localStorage !== false) {
       const stateStore = await JSON.parse(localStorage.getItem("itemsArray"));
-      let uniqueState = new Set(stateStore);
+      const uniqueState = new Set(stateStore);
       this.setState({ current: Array.from(uniqueState) });
     }
   };
 
   clearFav = async () => {
     await localStorage.removeItem("itemsArray");
-    this.setState({ current: false });
+    this.setState({ current: "" });
   };
 
   render() {
@@ -40,9 +40,9 @@ class Favorites extends Component {
         <Button
           className="remove"
           onClick={this.clearFav.bind(this)}
-          variant="outline-warning"
+          variant="outline-primary"
         >
-          Clear Favorites
+          Clear ALL Favorites
         </Button>
       </div>
     );

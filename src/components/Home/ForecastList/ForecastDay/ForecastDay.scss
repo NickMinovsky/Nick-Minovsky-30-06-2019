@@ -8,9 +8,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 250px;
     margin-right: 2rem;
     margin-top: 2rem;
+    border: 1px double #fd6f71;
+    border-radius: 57px;
+    border-width: 5px;
+    height: 200px;
 
     @media screen and (max-width: 599px) {
       height: 30vh;

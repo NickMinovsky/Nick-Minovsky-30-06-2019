@@ -56,6 +56,7 @@
   margin-top: 4rem;
   text-shadow: 0px 3px 0px #fd6f71;
   text-align: center;
+  z-index: 1;
 }
 
 @media screen and (max-width: 599px) {

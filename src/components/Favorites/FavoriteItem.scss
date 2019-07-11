@@ -1,3 +1,10 @@
+.favContainer {
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
 .favItem {
   border-radius: 38px 38px 38px 38px;
   margin: 1rem;
@@ -11,4 +18,47 @@
   background-color: #fadc60;
   color: #fd6f71;
   border: 5px double #fd6f71;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.removeFav {
+  font-size: 2rem;
+  border-color: transparent;
+  text-align: center;
+  background-color: transparent;
+  color: #eee;
+  position: relative;
+  left: -60px;
+  transition: left 500ms, color 300ms;
+}
+
+.removeFav:hover {
+  color: #fd6f71;
+}
+.searchFav {
+  font-size: 2rem;
+  border-color: transparent;
+  text-align: center;
+  background-color: transparent;
+  color: #fadc60;
+  position: relative;
+  left: 60px;
+  right: 400px;
+  transition: left 500ms, color 300ms;
+}
+
+.searchFav:hover {
+  color: #fd6f71;
+}
+
+.favContainer:hover > .removeFav {
+  left: 0;
+}
+.favContainer:hover > .searchFav {
+  left: 0;
+}
+
+.card-body {
+  width: 200px;
 }

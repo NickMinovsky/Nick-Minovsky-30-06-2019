@@ -22,6 +22,7 @@
 
 .fav-container {
   height: 100%;
+  width: unset;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

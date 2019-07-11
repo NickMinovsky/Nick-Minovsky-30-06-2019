@@ -5,37 +5,53 @@ import SearchBar from "../Layout/SearchBar/SearchBar";
 import Today from "./Today/Today";
 import ForecastList from "./ForecastList/ForecastList";
 import Condition from "../Layout/Condition/Condition";
+import Toast from "../Layout/Toast/Toast";
 import "./Home.css";
 
 class Home extends Component {
-  state = { current: "", forecast: "" };
+  state = { current: "", forecast: "", status: "" };
 
   componentDidMount() {
     this.onSearchSubmit("tel aviv"); // API request
   }
   onSearchSubmit = async term => {
-    const response = await weather.get("/forecast.json", {
-      params: {
-        q: term
-      }
-    });
-    this.setState({
-      current: response.data,
-      forecast: response.data.forecast
-    });
+    try {
+      const response = await weather.get("/forecast.json", {
+        params: {
+          q: term
+        }
+      });
+      this.setState({
+        current: response.data,
+        forecast: response.data.forecast,
+        status: ""
+      });
+    } catch (error) {
+      console.log("error while fetching API,", error.message);
+    }
   };
   addFav() {
-    let oldItems = JSON.parse(localStorage.getItem("itemsArray")) || [];
-    let newItem = this.state.current.location.name;
-    oldItems.push(newItem);
-    localStorage.setItem("itemsArray", JSON.stringify(oldItems));
+    const oldItems = JSON.parse(localStorage.getItem("itemsArray")) || [];
+    const newItem = this.state.current.location.name;
+    if (!oldItems.includes(newItem)) {
+      oldItems.push(newItem);
+      localStorage.setItem("itemsArray", JSON.stringify(oldItems));
+      this.setState({ status: `${newItem} was added succesfully` });
+    } else {
+      this.setState({ status: `${newItem} has already been added` });
+    }
   }
   render() {
     return (
       <div className="layout">
         <div id="top" className="top-div">
           <SearchBar onSearchSubmit={this.onSearchSubmit.bind(this)} />
-          <Today addFav={this.addFav.bind(this)} current={this.state.current} />
+          <Today
+            addFav={this.addFav.bind(this)}
+            current={this.state.current}
+            status={this.state.status}
+          />
+          <Toast />
         </div>
         <div id="forecast" className="bottom-div">
           <Condition />

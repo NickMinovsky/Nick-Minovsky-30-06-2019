@@ -5,13 +5,23 @@ import SUN_ICON from "../../../img/sun.svg";
 import "./SearchBar.css";
 
 class SearchBar extends Component {
-  state = { term: "" };
+  state = { term: "", alert: "" };
 
+  validate = event => {
+    const re = /[a-zA-Z ]+/g;
+    if (!re.test(event.key)) {
+      event.preventDefault();
+      this.setState({ alert: "Please use english letters only." });
+    } else {
+      this.setState({ alert: "" });
+    }
+  };
   inputHandler = event => {
-    let input = event.target.value;
+    const input = event.target.value;
     this.setState({ term: input });
   };
   onFormSubmit = event => {
+    this.setState({ alert: "" });
     event.preventDefault();
     this.props.onSearchSubmit(this.state.term);
   };
@@ -37,6 +47,7 @@ class SearchBar extends Component {
             <FormControl
               value={this.state.term}
               onChange={this.inputHandler}
+              onKeyPress={this.validate}
               type="text"
               placeholder="Enter a city name"
               required
@@ -45,6 +56,7 @@ class SearchBar extends Component {
             <Button type="submit" variant="outline-primary">
               Click Me!
             </Button>
+            <p className="alert">{this.state.alert}</p>
           </Form>
         </Navbar.Collapse>
       </Navbar>
