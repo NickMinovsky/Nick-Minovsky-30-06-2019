@@ -5,7 +5,6 @@ import SearchBar from "../Layout/SearchBar/SearchBar";
 import Today from "./Today/Today";
 import ForecastList from "./ForecastList/ForecastList";
 import Condition from "../Layout/Condition/Condition";
-import Toast from "../Layout/Toast/Toast";
 import "./Home.css";
 
 class Home extends Component {
@@ -36,7 +35,7 @@ class Home extends Component {
     if (!oldItems.includes(newItem)) {
       oldItems.push(newItem);
       localStorage.setItem("itemsArray", JSON.stringify(oldItems));
-      this.setState({ status: `${newItem} was added succesfully` });
+      this.setState({ status: `${newItem} was added successfully` });
     } else {
       this.setState({ status: `${newItem} has already been added` });
     }
@@ -51,7 +50,6 @@ class Home extends Component {
             current={this.state.current}
             status={this.state.status}
           />
-          <Toast />
         </div>
         <div id="forecast" className="bottom-div">
           <Condition />
