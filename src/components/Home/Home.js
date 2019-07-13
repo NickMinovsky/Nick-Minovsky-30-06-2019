@@ -17,15 +17,15 @@ class Home extends Component {
     if (!getToday && !getTerm) {
       // initial load
       this.onSearchSubmit("tel aviv");
-      console.log("DATA FROM FETCH");
     } else if (
       localStorage.getItem("searchTerm") !== JSON.parse(getToday).location.name
     ) {
       this.onSearchSubmit(getTerm);
-      console.log("DATA FROM API");
     } else {
-      this.setState({ current: JSON.parse(localStorage.getItem("Today")) });
-      console.log("DATA FROM storage");
+      this.setState({
+        current: JSON.parse(getToday),
+        forecast: JSON.parse(getToday).forecast
+      });
     }
   }
   onSearchSubmit = async term => {
