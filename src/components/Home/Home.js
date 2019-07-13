@@ -10,8 +10,23 @@ import "./Home.css";
 class Home extends Component {
   state = { current: "", forecast: "", status: "" };
 
-  componentDidMount() {
-    this.onSearchSubmit("tel aviv"); // API request
+  componentWillMount() {
+    const getToday = localStorage.getItem("Today");
+    const getTerm = localStorage.getItem("searchTerm");
+
+    if (!getToday && !getTerm) {
+      // initial load
+      this.onSearchSubmit("tel aviv");
+      console.log("DATA FROM FETCH");
+    } else if (
+      localStorage.getItem("searchTerm") !== JSON.parse(getToday).location.name
+    ) {
+      this.onSearchSubmit(getTerm);
+      console.log("DATA FROM API");
+    } else {
+      this.setState({ current: JSON.parse(localStorage.getItem("Today")) });
+      console.log("DATA FROM storage");
+    }
   }
   onSearchSubmit = async term => {
     try {
@@ -25,8 +40,14 @@ class Home extends Component {
         forecast: response.data.forecast,
         status: ""
       });
+      localStorage.setItem("Today", JSON.stringify(response.data)); // sets localStorage
+      localStorage.setItem("searchTerm", this.state.current.location.name);
+      console.log("term is NOW", this.state.current.location.name);
     } catch (error) {
       console.log("error while fetching API,", error.message);
+      this.setState({
+        status: "Sorry, we couldn't find your city, try again"
+      });
     }
   };
   addFav() {

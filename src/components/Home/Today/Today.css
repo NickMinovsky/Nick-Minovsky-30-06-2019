@@ -31,13 +31,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 350px;
-  height: 350px;
+  width: 500px;
+  height: 500px;
   background-color: #fadc60;
   border-radius: 100%;
   font-size: 2rem;
   text-align: center;
-  line-height: 1.2rem;
   letter-spacing: 0.2rem;
   -webkit-animation: sun 2s infinite forwards;
           animation: sun 2s infinite forwards;
@@ -47,6 +46,8 @@
 @media screen and (max-width: 599px) {
   .main-desc {
     margin-top: 3rem;
+    width: 350px;
+    height: 350px;
   }
 }
 

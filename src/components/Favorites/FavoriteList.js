@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 import "./FavoriteList.css";
 
 class Favorites extends Component {
-  state = { current: "" };
+  state = { current: [] };
 
   componentDidMount() {
     this.mountStorage();
@@ -21,8 +21,12 @@ class Favorites extends Component {
   };
 
   clearFav = async () => {
-    await localStorage.removeItem("itemsArray");
-    this.setState({ current: "" });
+    try {
+      await localStorage.removeItem("itemsArray");
+      this.setState({ current: [] });
+    } catch (error) {
+      console.log("Error deleting item from favorites,", error.message);
+    }
   };
 
   render() {

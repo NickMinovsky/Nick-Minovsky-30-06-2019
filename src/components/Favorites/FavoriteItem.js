@@ -1,12 +1,13 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 
 import { Card } from "react-bootstrap";
 import "./FavoriteItem.css";
 
 class FavoriteItem extends Component {
-  state = { componentShow: true };
+  state = { componentShow: true, redirect: false };
 
-  removeFav() {
+  removeFav = () => {
     // copy storage, remove from storage, save and remove from DOM
     const temp = [...JSON.parse(localStorage.getItem("itemsArray"))];
     const index = temp.indexOf(`${this.props.city}`);
@@ -15,25 +16,38 @@ class FavoriteItem extends Component {
     }
     localStorage.setItem("itemsArray", JSON.stringify(temp));
     this.setState({ componentShow: false });
-  }
+  };
 
-  searchFav() {
-    // redirect back to Home page
-  }
+  searchFav = async () => {
+    try {
+      await localStorage.setItem("searchTerm", this.props.city);
+      this.setState({ redirect: true });
+      console.log(typeof this.state.redirect);
+      console.log(`term is now ${this.props.city}`);
+    } catch (error) {}
+  };
   render() {
+    if (this.state.redirect) {
+      return <Redirect to="/" />;
+    }
     if (this.state.componentShow) {
       return (
         <span className="favContainer">
           <button className="searchFav" onClick={this.searchFav.bind(this)}>
-            <i class="fa fa-search" aria-hidden="true" />
+            <i className="fa fa-search" aria-hidden="true" />
           </button>
           <Card className="favItem">
             <Card.Body>
               <Card.Text>{this.props.city}</Card.Text>
             </Card.Body>
           </Card>
-          <button className="removeFav" onClick={this.removeFav.bind(this)}>
-            <i class="fa fa-times-circle" aria-hidden="true" />
+          <button
+            to="/favorite
+            "
+            className="removeFav"
+            onClick={this.removeFav.bind(this)}
+          >
+            <i className="fa fa-times-circle" aria-hidden="true" />
           </button>
         </span>
       );

@@ -5,7 +5,7 @@
   left: 4.5%;
   background-color: transparent !important;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 }
 
 a.link {
@@ -62,6 +62,9 @@ a.link:hover {
 }
 
 @media screen and (max-width: 599px) {
+  .navbar {
+    background-color: rgb(0, 123, 255) !important;
+  }
   input.mr-sm-2.form-control {
     margin-bottom: 0.5rem;
     margin-top: 0.5rem;
@@ -75,6 +78,7 @@ a.link:hover {
 }
 
 .alert {
+  font-size: 1.2rem;
   position: absolute;
   top: 60px;
   right: 85px;
@@ -83,19 +87,19 @@ a.link:hover {
 }
 .alert2 {
   color: #fd6f71;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   margin: 0;
   padding: 0;
   position: relative;
   top: 10px;
   height: 10px;
   width: 50%;
-  animation: blink 1s infinite;
+  animation: blink 1.5s infinite;
 }
 
 @keyframes blink {
   0% {
-    opacity: 0;
+    opacity: 0.1;
   }
 
   50% {

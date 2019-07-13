@@ -6,7 +6,7 @@ import { Button } from "react-bootstrap";
 import "./Today.css";
 
 const Today = ({ current, addFav, status }) => {
-  while (!current) {
+  if (!current) {
     return (
       <div className="main">
         <div className="main-desc">
