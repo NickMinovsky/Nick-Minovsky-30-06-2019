@@ -2,7 +2,7 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 300px;
+  width: 500px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -42,10 +42,23 @@
   left: -60px;
   -webkit-transition: left 500ms, color 300ms;
   transition: left 500ms, color 300ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
 }
 
 .removeFav:hover {
   color: #fd6f71;
+}
+
+.removeFav:hover::after {
+  content: "Delete";
+  font-size: 1rem;
+  margin-left: 0.5rem;
 }
 
 .searchFav {
@@ -59,6 +72,13 @@
   right: 400px;
   -webkit-transition: left 500ms, color 300ms;
   transition: left 500ms, color 300ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
 }
 
 .searchFav:hover {

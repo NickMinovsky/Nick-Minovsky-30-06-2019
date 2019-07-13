@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
+
 import { Link } from "react-router-dom";
 import SUN_ICON from "../../../img/sun.svg";
+import MOON_ICON from "../../../img/moon.svg";
+
 import "./SearchBar.css";
 
 class SearchBar extends Component {

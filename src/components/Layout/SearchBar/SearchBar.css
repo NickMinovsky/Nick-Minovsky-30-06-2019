@@ -97,6 +97,13 @@ a.link:hover {
   animation: blink 1.5s infinite;
 }
 
+.dark-mode {
+  margin: 1rem;
+  padding: 0;
+  top: 90px;
+  position: absolute;
+}
+
 @keyframes blink {
   0% {
     opacity: 0.1;

@@ -1,6 +1,6 @@
 .favContainer {
   display: flex;
-  width: 300px;
+  width: 500px;
   justify-content: center;
   align-items: center;
 }
@@ -31,10 +31,18 @@
   position: relative;
   left: -60px;
   transition: left 500ms, color 300ms;
+  display: flex;
+  align-items: center;
+  width: 50px;
 }
 
 .removeFav:hover {
   color: #fd6f71;
+  &::after {
+    content: "Delete";
+    font-size: 1rem;
+    margin-left: 0.5rem;
+  }
 }
 .searchFav {
   font-size: 2rem;
@@ -46,6 +54,9 @@
   left: 60px;
   right: 400px;
   transition: left 500ms, color 300ms;
+  display: flex;
+  align-items: center;
+  width: 50px;
 }
 
 .searchFav:hover {
