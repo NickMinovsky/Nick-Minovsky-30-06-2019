@@ -1,7 +1,7 @@
 .main2 {
   color: #292c2f;
   font-family: "Muli", sans-serif;
-  width: 18%;
+  width: 15%;
 
   @media screen and (max-width: 599px) {
     width: 200px;
@@ -21,6 +21,7 @@
     height: 200px;
     text-align: center;
     padding: 5px;
+    background-color: #fadc60;
 
     @media screen and (max-width: 599px) {
       height: 30vh;

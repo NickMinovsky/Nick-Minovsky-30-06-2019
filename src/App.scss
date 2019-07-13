@@ -9,14 +9,7 @@ html {
 .layout {
   height: 100%;
   background: rgb(0, 191, 255);
-  background-image: linear-gradient(
-    to right top,
-    #00bfff,
-    #1dc3fe,
-    #2dc6fd,
-    #3acafc,
-    #46cdfb
-  );
+  background-image: linear-gradient(to right top, #00bfff, #1dc3fe, #2dc6fd, #3acafc, #46cdfb);
 }
 .top-div {
   top: 0;

@@ -39,6 +39,7 @@
 @media screen and (max-width: 599px) {
   .fav-container {
     margin-top: 9rem;
+    width: unset;
   }
 }
 

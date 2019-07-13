@@ -1,14 +1,7 @@
 .layout2 {
   height: 100vh;
   background: rgb(0, 191, 255);
-  background-image: linear-gradient(
-    to right top,
-    #00bfff,
-    #1dc3fe,
-    #2dc6fd,
-    #3acafc,
-    #46cdfb
-  );
+  background-image: linear-gradient(to right top, #00bfff, #1dc3fe, #2dc6fd, #3acafc, #46cdfb);
   width: 100%;
   min-height: 100%;
   display: flex;
@@ -26,6 +19,7 @@
   overflow: auto;
   @media screen and (max-width: 599px) {
     margin-top: 9rem;
+    width: unset;
   }
 }
 
