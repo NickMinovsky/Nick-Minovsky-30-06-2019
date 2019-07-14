@@ -1,0 +1,98 @@
+.favContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 500px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 599px) {
+  .favContainer {
+    width: unset;
+  }
+}
+
+.favItem {
+  border-radius: 38px 38px 38px 38px;
+  margin: 1rem;
+  text-overflow: clip;
+  display: -ms-grid;
+  display: grid;
+  grid-column: span 3;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  width: 150px;
+  background-color: #fadc60;
+  color: #fd6f71;
+  border: 5px double #fd6f71;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.removeFav {
+  font-size: 2rem;
+  border-color: transparent;
+  text-align: center;
+  background-color: transparent;
+  color: #eee;
+  position: relative;
+  left: -60px;
+  -webkit-transition: left 500ms, color 300ms;
+  transition: left 500ms, color 300ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.removeFav:hover {
+  color: #fd6f71;
+}
+
+.searchFav {
+  font-size: 2rem;
+  border-color: transparent;
+  text-align: center;
+  background-color: transparent;
+  color: #fadc60;
+  position: relative;
+  left: 60px;
+  right: 400px;
+  -webkit-transition: left 500ms, color 300ms;
+  transition: left 500ms, color 300ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50px;
+}
+
+.searchFav:hover {
+  color: #fd6f71;
+}
+
+.favContainer:hover > .removeFav {
+  left: 0;
+}
+
+.favContainer:hover > .searchFav {
+  left: 0;
+}
+
+.card-body {
+  width: 200px;
+}
+/*# sourceMappingURL=FavoriteItem.css.map */

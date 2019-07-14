@@ -1,0 +1,50 @@
+.navbar {
+  border-radius: 80px !important;
+  top: 5px;
+  width: 90%;
+  left: 4.5%;
+  background-color: transparent !important;
+  position: fixed;
+}
+
+.link {
+  margin-right: 10px;
+  text-decoration: none;
+  transition: 300ms;
+  color: #fff !important;
+}
+.link:hover {
+  color: rgb(70, 70, 70) !important;
+}
+
+.btn-outline-primary {
+  color: #fd6f71;
+  border-color: #fd6f71;
+  border-radius: 80px;
+  background-color: #fadc60;
+  border: 2px solid;
+  padding: 10px;
+}
+
+.btn-outline-primary:hover {
+  background-color: #fd6f71;
+  border-color: #fadc60;
+  color: #fadc60;
+}
+
+.btn-outline-primary:active {
+  color: red;
+}
+
+.sun_icon {
+  height: 80px;
+  margin-right: 1rem;
+}
+
+.navbar-brand {
+  padding-bottom: 0;
+}
+
+.mr-sm-2::grammar-error {
+  background-color: green;
+}
